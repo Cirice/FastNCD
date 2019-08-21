@@ -1,5 +1,5 @@
-#include "cmp_algorithms.hpp"
-#include "ncd.hpp"
+#include "cmp_algorithms.h"
+#include "ncd.h"
 
 #include<iostream>
 

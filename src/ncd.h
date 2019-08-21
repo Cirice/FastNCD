@@ -1,7 +1,7 @@
-#include "cmp_algorithms.hpp"
-
 #ifndef NCD_H_
 #define NCD_H_
+
+#include "cmp_algorithms.h"
 
 
 class NCD {

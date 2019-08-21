@@ -1,5 +1,5 @@
-#include "cmp_algorithms.hpp"
-#include "ncd.hpp"
+#include "cmp_algorithms.h"
+#include "ncd.h"
 
 #include <algorithm>
 
@@ -14,5 +14,6 @@ const char* NCD::concat_xy(const char* x, const char* y){
 	};
 
 float NCD::calculate_ncd(const char* x, const char* y, cmp_type t) {
-	return (float)(compress(concat_xy(x, y)) - std::min(compress(x, y)) / std::max(compress(x), compress(y)))
+  return (float)(NCD::compress(NCD::concat_xy(x, y), t) - std::min(NCD::compress(x, t), NCD::compress(y, t)) /
+		 std::max(NCD::compress(x, t), NCD::compress(y, t)));
 	};
