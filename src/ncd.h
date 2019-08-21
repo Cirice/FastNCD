@@ -12,6 +12,9 @@ private:
 
         // given two byte array this method will make a new array the size of the sum of two arrays and fill it with data from x and y
 	const char* concat_xy(const char* x, const char* y);
+	
+        // this variable will hold the concatenation result between x and y arrays
+	const char *xy;
 
 public:
 	// this method will return the calculated normalized constant compression distance between x and y

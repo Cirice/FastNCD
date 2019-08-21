@@ -1,0 +1,3 @@
+[submodule "src/compression-algorithms"]
+	path = src/compression-algorithms
+	url = https://github.com/glampert/compression-algorithms
