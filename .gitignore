@@ -37,3 +37,7 @@ lib/*
 
 # Ignore any executables
 bin/*
+
+# Ignore the executables files
+main.exe
+main
