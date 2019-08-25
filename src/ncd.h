@@ -13,7 +13,7 @@ enum cmp_type {
 
 class NCD {
 
-private:
+public:
 	// given an arbitary sized byte array this method will compress it with compression algorithm t
 	int compress(string x, cmp_type t);
 

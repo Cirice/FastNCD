@@ -1,9 +1,10 @@
 CC := g++
 SCRDIR := src
 FLAGS := -Wall
+LINKLIBS := -lsnappy
 
 all:
-	$(CC)	-o main $(SCRDIR)/main.cpp $(SCRDIR)/ncd.cpp  $(FLAGS)
+	$(CC)	-o main $(SCRDIR)/main.cpp $(SCRDIR)/ncd.cpp  $(FLAGS) $(LINKLIBS)
 
 test:
 	rm -f test

@@ -12,19 +12,15 @@ int NCD::compress(string x, cmp_type t) {
         string sink;
 	switch(t) {
 		case z_snappy:
-			return snappy::Compress(x.data(), x.size(), &sink);	
+			snappy::Compress(x.data(), x.size(), &sink);
+                        return sink.size();
 		default:
 			return -1;
+}
 };
 
-	};
-
 string NCD::concat_xy(string x, string y){
-        //NCD::xy = (const char*)malloc((strlen(x) + strlen(y) - 1)*sizeof(char));
-	//strcpy((char *)xy, x);
-        //strcat((char *)xy, y);
-        //std::cout << NCD::xy << std::endl;
-        return "NCD::xy";
+        return x+y;
 	};
 
 float NCD::calculate_ncd(string x, string y, cmp_type t) {
