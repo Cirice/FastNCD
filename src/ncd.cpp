@@ -9,10 +9,12 @@
 #include <boost/iostreams/filtering_streambuf.hpp>
 #include <boost/iostreams/copy.hpp>
 #include <boost/iostreams/filter/gzip.hpp>
+#include <boost/iostreams/filter/zlib.hpp>
+
 
 namespace compressors {
 
-std::string compress_gzip(std::string& data)
+std::string compress(std::string& data, cmp_type t)
 	{
 		namespace bio = boost::iostreams;
 
@@ -20,7 +22,9 @@ std::string compress_gzip(std::string& data)
 		std::stringstream origin(data);
 
 		bio::filtering_streambuf<bio::input> out;
-		out.push(bio::gzip_compressor(bio::gzip_params(bio::gzip::best_compression)));
+                if (t == z_gzip) {out.push(bio::gzip_compressor(bio::gzip_params(bio::gzip::best_compression)));}
+                else if (t == z_zlib) {out.push(bio::zlib_compressor(bio::zlib_params(bio::zlib::best_compression)));}
+
 		out.push(origin);
 		bio::copy(out, compressed);
 
@@ -37,7 +41,10 @@ int NCD::compress(std::string x, cmp_type t) {
 			snappy::Compress(x.data(), x.size(), &sink);
                         return sink.size();
                 case z_gzip:
-                        sink = compressors::compress_gzip(x);
+                        sink = compressors::compress(x, z_gzip);
+                        return sink.size();
+                case z_zlib:
+                        sink = compressors::compress(x, z_zlib);
                         return sink.size();
 		default:
 			return -1;

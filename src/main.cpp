@@ -22,14 +22,22 @@ int main() {
         cout << ncd.concat_xy(x, y) << endl;
         cout << ncd.compress(x, z_snappy) << endl;
         cout << ncd.compress(y, z_snappy) << endl;
-        cout << ncd.compress(ncd.concat_xy(x, y), z_snappy) << endl;
+        cout << ncd.compress(ncd.concat_xy(x, y), z_snappy) << endl << endl;
 
         // GZip compression used as Z
         cout << ncd.calculate_ncd(x, y, z_gzip) << endl;
         cout << ncd.concat_xy(x, y) << endl;
         cout << ncd.compress(x, z_gzip) << endl;
         cout << ncd.compress(y, z_gzip) << endl;
-        cout << ncd.compress(ncd.concat_xy(x, y), z_gzip) << endl;
+        cout << ncd.compress(ncd.concat_xy(x, y), z_gzip) << endl << endl;
+
+        // ZLib compression used as Z
+        cout << ncd.calculate_ncd(x, y, z_zlib) << endl;
+        cout << ncd.concat_xy(x, y) << endl;
+        cout << ncd.compress(x, z_zlib) << endl;
+        cout << ncd.compress(y, z_zlib) << endl;
+        cout << ncd.compress(ncd.concat_xy(x, y), z_zlib) << endl << endl;
+
 
 	return 0;
 }
