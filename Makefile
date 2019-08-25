@@ -1,7 +1,7 @@
 CC := g++
 SCRDIR := src
 FLAGS := -Wall
-LINKLIBS := -lsnappy
+LINKLIBS := -lsnappy -lboost_iostreams
 
 all:
 	$(CC)	-o main $(SCRDIR)/main.cpp $(SCRDIR)/ncd.cpp  $(FLAGS) $(LINKLIBS)

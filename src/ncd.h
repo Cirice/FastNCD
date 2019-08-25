@@ -8,7 +8,8 @@
 using namespace std;
 
 enum cmp_type {
-	z_snappy
+	z_snappy,
+        z_gzip
 };
 
 class NCD {
