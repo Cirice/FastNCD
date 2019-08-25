@@ -6,6 +6,8 @@ FastNCD is a C++ library for caculating the normalized compression distances bet
 	1. GZip
 		- Best compression
 	2. Snappy
+	3. ZLib
+		- Best compression
 
 ### Dependencies
 
