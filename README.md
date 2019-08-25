@@ -1,9 +1,10 @@
 # FastNCD
-FastNCD is a C++ library for caculating the normalized compression distances between strings
+FastNCD is a C++ library for caculating the normalized compression distances between arbitrary strings
 
 ### Currently supported compression algorithms
 
 	1. GZip
+		- Best compression
 	2. Snappy
 
 ### Dependencies
