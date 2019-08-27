@@ -18,6 +18,6 @@ Dont't for get to install the following libraries (headers and library files):
 
 Usually on a Debian based operating system like Mint or Ubuntu, and of course Debian herself you could install these files by executing these commands:
 	
-	sudo apt-get install libboost-iostreams-dev snappy-dev
+	sudo apt-get install libboost-iostreams-dev libsnappy-dev
 	
 

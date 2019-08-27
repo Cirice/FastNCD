@@ -22,8 +22,8 @@ std::string compress(std::string& data, cmp_type t)
 		std::stringstream origin(data);
 
 		bio::filtering_streambuf<bio::input> out;
-                if (t == z_gzip) {out.push(bio::gzip_compressor(bio::gzip_params(bio::gzip::best_compression)));}
-                else if (t == z_zlib) {out.push(bio::zlib_compressor(bio::zlib_params(bio::zlib::best_compression)));}
+                if (t == z_gzip_bc) {out.push(bio::gzip_compressor(bio::gzip_params(bio::gzip::best_compression)));}
+                else if (t == z_zlib_bc) {out.push(bio::zlib_compressor(bio::zlib_params(bio::zlib::best_compression)));}
 
 		out.push(origin);
 		bio::copy(out, compressed);
@@ -40,11 +40,11 @@ int NCD::compress(std::string x, cmp_type t) {
 		case z_snappy:
 			snappy::Compress(x.data(), x.size(), &sink);
                         return sink.size();
-                case z_gzip:
-                        sink = compressors::compress(x, z_gzip);
+                case z_gzip_bc:
+                        sink = compressors::compress(x, t);
                         return sink.size();
-                case z_zlib:
-                        sink = compressors::compress(x, z_zlib);
+                case z_zlib_bc:
+                        sink = compressors::compress(x, t);
                         return sink.size();
 		default:
 			return -1;
