@@ -3,22 +3,23 @@
 // (See http://www.boost.org/LICENSE_1_0.txt)
 
 // Original link http://panthema.net/2007/0328-ZLibString.html WITH A FEW MODIFICATIONS
+// For zlib's internal detail please see its documentations at https://www.zlib.net/manual.html
+
+#include "utils.h"
 
 #include <cstring>
 #include <stdexcept>
 #include <iostream>
 #include <iomanip>
 #include <sstream>
-
 #include <zlib.h>
+
 
 #define MAX_BUFFER_SIZE 32768
 
-namespace zlib_string_compression {
-
 /** Compress a STL string using zlib with given compression level and return
   * the binary data. */
-std::string compress_string(const std::string& str,
+std::string zlib_cpp::compress_string(const std::string& str,
                             int compressionlevel = Z_BEST_COMPRESSION)
 {
     z_stream zs;                        // z_stream is zlib's control structure
@@ -57,6 +58,4 @@ std::string compress_string(const std::string& str,
     }
 
     return outstring;
-}
-
 }
