@@ -15,13 +15,13 @@ int NCD::compress(std::string x, cmp_type t) {
 			snappy::Compress(x.data(), x.size(), &sink);
                         return sink.size();
                 case z_gzip_bc:
-                        sink = zlib_cpp::compress_string(x, Z_BEST_COMPRESSION);
+                        sink = zlib_wrapper::compress_string(x, Z_BEST_COMPRESSION);
                         return sink.size();
                 case z_zlib_bc:
-                        sink = zlib_cpp::compress_string(x, Z_BEST_COMPRESSION); // Z_BEST_SPEED is equal to compression level 1
+                        sink = zlib_wrapper::compress_string(x, Z_BEST_COMPRESSION); // Z_BEST_SPEED is equal to compression level 1
                         return sink.size();
                 case z_zlib_fc:
-                        sink = zlib_cpp::compress_string(x, Z_BEST_SPEED); // Z_BEST_SPEED is equal to compression level 1
+                        sink = zlib_wrapper::compress_string(x, Z_BEST_SPEED); // Z_BEST_SPEED is equal to compression level 1
                         return sink.size();
 		default:
 			return -1;

@@ -13,13 +13,12 @@
 #include <iomanip>
 #include <sstream>
 #include <zlib.h>
+#include <zstd.h>
 
-
-#define MAX_BUFFER_SIZE 32768
 
 /** Compress a STL string using zlib with given compression level and return
   * the binary data. */
-std::string zlib_cpp::compress_string(const std::string& str,
+std::string zlib_wrapper::compress_string(const std::string& str,
                             int compressionlevel = Z_BEST_COMPRESSION)
 {
     z_stream zs;                        // z_stream is zlib's control structure
@@ -58,4 +57,26 @@ std::string zlib_cpp::compress_string(const std::string& str,
     }
 
     return outstring;
+}
+
+
+std::string zstd_wrapper::compress_string(const std::string& str,
+                            int compressionlevel = ZSTD_maxCLevel())
+{
+
+
+std::string outstring;
+
+size_t x = ZSTD_compress(outstring.c_str(), outstring.size(),
+                str.c_str(), str.size(), compressionlevel);
+
+/*
+  Compresses `src` content as a single zstd compressed frame into already allocated `dst`.
+  Hint : compression runs faster if `dstCapacity` >=  `ZSTD_compressBound(srcSize)`.
+  @return : compressed size written into `dst` (<= `dstCapacity),
+            or an error code if it fails (which can be tested using ZSTD_isError()). 
+*/
+
+return outstring;
+
 }

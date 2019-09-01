@@ -4,7 +4,7 @@ AR := ar
 AR_FLAGS := rvs
 SCRDIR := src
 FLAGS := -Wall
-LINKLIBS := -lsnappy -lz
+LINKLIBS := -lsnappy -lz -lzstd
 NCD_LIB := -L ./ -lfastncd
 
 
@@ -24,7 +24,7 @@ test:
 
 
 clean:
-	rm -f main test $(SCRDIR)/*.o
+	rm -f main test fastncd.a $(SCRDIR)/*.o
 
 
 
