@@ -11,6 +11,7 @@
 #include <boost/iostreams/filter/gzip.hpp>
 #include <boost/iostreams/filter/zlib.hpp>
 #include <boost/iostreams/filter/bzip2.hpp>
+#include <boost/iostreams/filter/lzma.hpp>
 
 namespace compressors {
 
@@ -32,10 +33,11 @@ std::string compress(std::string &data, cmp_type t) {
 						bio::zlib_params(bio::zlib::best_compression)));
 	} else if (t == z_zlib_fc) {
 		out.push(bio::zlib_compressor(bio::zlib_params(bio::zlib::best_speed)));
-	}
 
-	else if (t == z_bzip2_ds) {
-		out.push(bio::bzip2_compressor(bio::bzip2_params(bio::bzip2::default_block_size)));
+	} else if (t == z_bzip2_ds) {
+		out.push(
+				bio::bzip2_compressor(
+						bio::bzip2_params(bio::bzip2::default_block_size)));
 	}
 
 	out.push(origin);

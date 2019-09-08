@@ -8,7 +8,7 @@ using namespace std;
 
 // a flag for each different type of compressors
 enum cmp_type {
-	z_snappy, z_gzip_bc, z_zlib_bc, z_zlib_fc, z_bzip2_ds, z_lzma
+	z_snappy, z_gzip_bc, z_zlib_bc, z_zlib_fc, z_bzip2_ds
 };
 
 class NCD {
