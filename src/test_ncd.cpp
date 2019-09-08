@@ -1,4 +1,5 @@
-#include "ncd.h"
+#include "ncd.hpp"
+
 #include <iostream>
 #include <cstdlib>
 #include <cassert>

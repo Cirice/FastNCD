@@ -9,7 +9,7 @@
 |    [Gzip](https://en.wikipedia.org/wiki/Gzip)    |  [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE)      |  9 (best compression)     |  z_gzip_bc      |
 |    [Zlib](https://en.wikipedia.org/wiki/Zlib) |  [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE)      |  9 (best compression)      |  z_zlib_bc      |
 |    [Zlib](https://en.wikipedia.org/wiki/Zlib) | [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE)      |  1 (fastest compression)      |  z_zlib_fc      |
-|    [Snappy](https://en.wikipedia.org/wiki/Snappy_(compression))    |  [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78)      |  default      |  z_snappy      |
+|    [Snappy](https://en.wikipedia.org/wiki/Snappy_(compression))    |  [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78)      |  default      |  z_snappy_ds      |
 |    [Bzip2](https://en.wikipedia.org/wiki/Bzip2)    |  [Burrows–Wheeler transform](https://en.wikipedia.org/wiki/Burrows–Wheeler_transform)      |  default      |  z_bzip2_ds      |
 
 ### Dependencies
@@ -26,7 +26,5 @@ Usually on a `Debian` based operating system like `Mint` or `Ubuntu`, and of cou
 
 	sudo apt-get install libboost-iostreams-dev libsnappy-dev
 
-Note that other dependencies like `Zlib`, `Bzip2` and `Lzma` should be installed automatically on `Debian` when you install `libboost-iostreams-dev`.
-
 ### Important thing to remember
-The code is developed and tested mainly using `Boost 1.67` on `Debian Buster` using `GCC 8.3` but I guess it should work on the other operating systems that are derivatives of Debian 10 code-base (or newer) too without any modifications.
+The code is developed and tested mainly using `Boost 1.67.0` on `Debian Buster` using `GCC 8.3` but I guess it should work on the other operating systems that are derivatives of Debian 10 code-base (or newer) too without any modifications.

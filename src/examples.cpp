@@ -1,4 +1,4 @@
-#include "ncd.h"
+#include "ncd.hpp"
 
 #include <iostream>
 #include <string>
@@ -18,36 +18,29 @@ int main() {
 	// Of course we first need to create an instance for our NCD class ;)
 	NCD ncd = NCD();
 
+	cout << "string x is: " << x << endl;
+
+	cout << "string y is: " << y << endl;
+
 	// Snappy compression used as Z
-	cout << "snappy compression: " << ncd.calculate_ncd(x, y, z_snappy) << endl;
-	cout << ncd.concat_xy(x, y) << endl;
-	cout << ncd.compress(x, z_snappy) << endl;
-	cout << ncd.compress(y, z_snappy) << endl;
-	cout << ncd.compress(ncd.concat_xy(x, y), z_snappy) << endl << endl;
+	cout << "snappy compression: " << ncd.calculate_ncd(x, y, z_snappy_ds)
+			<< endl;
 
 	// GZip with best compression (level 9 compression) used as Z
 	cout << "gzip with the best compression: "
 			<< ncd.calculate_ncd(x, y, z_gzip_bc) << endl;
-	cout << ncd.concat_xy(x, y) << endl;
-	cout << ncd.compress(x, z_gzip_bc) << endl;
-	cout << ncd.compress(y, z_gzip_bc) << endl;
-	cout << ncd.compress(ncd.concat_xy(x, y), z_gzip_bc) << endl << endl;
 
 	// ZLib with best compression (level 9 compression) used as Z
 	cout << "zlib with the best compression: "
 			<< ncd.calculate_ncd(x, y, z_zlib_bc) << endl;
-	cout << ncd.concat_xy(x, y) << endl;
-	cout << ncd.compress(x, z_zlib_bc) << endl;
-	cout << ncd.compress(y, z_zlib_bc) << endl;
-	cout << ncd.compress(ncd.concat_xy(x, y), z_zlib_bc) << endl << endl;
 
 	// ZLib with fastest compression (level 1 compression) used as Z
 	cout << "zlib with fastest compression: "
 			<< ncd.calculate_ncd(x, y, z_zlib_fc) << endl;
-	cout << ncd.concat_xy(x, y) << endl;
-	cout << ncd.compress(x, z_zlib_fc) << endl;
-	cout << ncd.compress(y, z_zlib_fc) << endl;
-	cout << ncd.compress(ncd.concat_xy(x, y), z_zlib_fc) << endl << endl;
+
+	// Bzip2 with default compression settings used as Z
+	cout << "bzip2 with default compression settings: "
+			<< ncd.calculate_ncd(x, y, z_bzip2_ds) << endl;
 
 	return 0;
 }

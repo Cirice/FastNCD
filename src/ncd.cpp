@@ -1,4 +1,4 @@
-#include "ncd.h"
+#include "ncd.hpp"
 
 #include <iostream>
 #include <algorithm>
@@ -31,6 +31,7 @@ std::string compress(std::string &data, cmp_type t) {
 		out.push(
 				bio::zlib_compressor(
 						bio::zlib_params(bio::zlib::best_compression)));
+
 	} else if (t == z_zlib_fc) {
 		out.push(bio::zlib_compressor(bio::zlib_params(bio::zlib::best_speed)));
 
@@ -50,7 +51,7 @@ std::string compress(std::string &data, cmp_type t) {
 int NCD::compress(std::string x, cmp_type t) {
 	std::string sink;
 	switch (t) {
-	case z_snappy:
+	case z_snappy_ds:
 		snappy::Compress(x.data(), x.size(), &sink);
 		return sink.size();
 	case z_gzip_bc:
@@ -60,6 +61,9 @@ int NCD::compress(std::string x, cmp_type t) {
 		sink = compressors::compress(x, t);
 		return sink.size();
 	case z_zlib_fc:
+		sink = compressors::compress(x, t);
+		return sink.size();
+	case z_bzip2_ds:
 		sink = compressors::compress(x, t);
 		return sink.size();
 	default:
