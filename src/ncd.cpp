@@ -64,5 +64,3 @@ float NCD::calculate_ncd(string x, string y, cmp_type t) {
   return (float)(NCD::compress(NCD::concat_xy(x, y), t) - std::min(NCD::compress(x, t), NCD::compress(y, t))) /
 		 std::max(NCD::compress(x, t), NCD::compress(y, t));
 	};
-
-
