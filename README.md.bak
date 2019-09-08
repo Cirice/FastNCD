@@ -1,6 +1,6 @@
 # FastNCD
 
-`FastNCD` is a C++ library for calculating the normalized compression distances between two strings.
+FastNCD is a C++ library for caculating the normalized compression distances between two strings.
 
 ### Currently supported real-world compression methods
 
@@ -14,18 +14,18 @@
 
 ### Dependencies
 
-Don't for get to install the following libraries (headers and library files):
+Dont't for get to install the following libraries (headers and library files):
 
 	* Boost iostreams library (version 1.67 and above)
 	* Google's Snappy compression library
 	* Zlib development files
 	* Bzip2 development files
 
-Usually on a `Debian` based operating system like `Mint` or `Ubuntu`, and of course `Debian` itself you could install these dependencies by executing the following command in your shell environment:
+Usually on a Debian based operating system like Mint or Ubuntu, and of course Debian itself you could install these dependencies by executing the following command in your shell environment:
 
 	sudo apt-get install libboost-iostreams-dev libsnappy-dev
 
-Note that other dependencies like `Zlib`, `Bzip2` and `Lzma` should be installed automatically on `Debian` when you install `libboost-iostreams-dev`.
+Note that other dependencies like zlib, bzip2 and lzma should be installed automatically on Debian when you install libboost-iostreams-dev
 
 ### Important thing to remember
-The code is developed and tested mainly using `Boost 1.67` on `Debian Buster` using `GCC 8.3` but I guess it should work on the other operating systems that are derivatives of Debian 10 code-base (or newer) too without any modifications.
+The code is developed and tested mainly using `Boost 1.67` on `Debian Buster` using `GCC 8.3` but I guess it should work on the other operting systems that are derivatives of Debian 10 codebase (or newer) too without any modifications.
