@@ -32,7 +32,6 @@ Example code for caluclating the NCD between two identical C++ strings by using 
 
 #include <iostream>
 #include <string>
-#include <snappy.h>
 
 using namespace std;
 
