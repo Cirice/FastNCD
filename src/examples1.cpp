@@ -18,11 +18,11 @@ int main() {
 	// Of course we first need to create an instance for our NCD class ;)
 	NCD ncd = NCD();
 
-	cout << "string x is: " << x << endl;
+	cout << "string x is: " << x << endl << endl;
 
-	cout << "string y is: " << y << endl;
+	cout << "string y is: " << y << endl << endl;
 
-	// Snappy compression used as Z
+	// Snappy with default compression settings used as Z
 	cout << "snappy compression: " << ncd.calculate_ncd(x, y, z_snappy_ds)
 			<< endl;
 

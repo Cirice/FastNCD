@@ -4,7 +4,7 @@ FLAGS := -Wall
 LINKLIBS := -lsnappy -lboost_iostreams
 
 all:
-	$(CC)	-o examples $(SCRDIR)/examples.cpp $(SCRDIR)/ncd.cpp  $(FLAGS) $(LINKLIBS)
+	$(CC)	-o examples1 $(SCRDIR)/examples1.cpp $(SCRDIR)/ncd.cpp  $(FLAGS) $(LINKLIBS)
 
 test:
 	rm -f test
@@ -12,4 +12,4 @@ test:
 	chmod u+x ./test && ./test
 
 clean:
-	rm -f main  examples test $(SCRDIR)/*.o
+	rm -f main  examples1 test $(SCRDIR)/*.o
