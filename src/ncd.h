@@ -1,17 +1,14 @@
 #ifndef NCD_H_
 #define NCD_H_
 
-
 #include <string>
 #include <iostream>
 
 using namespace std;
 
+// a flag for each different type of compressors
 enum cmp_type {
-	z_snappy,
-        z_gzip_bc,
-        z_zlib_bc,
-        z_zlib_fc
+	z_snappy, z_gzip_bc, z_zlib_bc, z_zlib_fc
 };
 
 class NCD {
@@ -20,7 +17,7 @@ public:
 	// given an arbitary sized byte array this method will compress it with compression algorithm t
 	int compress(string x, cmp_type t);
 
-        // given two byte array this method will make a new array the size of the sum of two arrays and fill it with data from x and y
+	// given two byte array this method will make a new array the size of the sum of two arrays and fill it with data from x and y
 	string concat_xy(string x, string y);
 
 public:

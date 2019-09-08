@@ -14,6 +14,7 @@
 
 namespace compressors {
 
+// https://stackoverflow.com/questions/27529570/simple-zlib-c-string-compression-and-decompression
 std::string compress(std::string& data, cmp_type t)
 	{
 		namespace bio = boost::iostreams;
