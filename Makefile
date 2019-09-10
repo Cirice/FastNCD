@@ -8,7 +8,7 @@ all:
 
 test:
 	rm -f test
-	$(CC)   -o test $(SCRDIR)/test_ncd.cpp $(SCRDIR)/ncd.cpp  $(FLAGS)
+	$(CC)   -o test $(SCRDIR)/test_ncd.cpp $(SCRDIR)/ncd.cpp  $(FLAGS) $(LINKLIBS)
 	chmod u+x ./test && ./test
 
 clean:

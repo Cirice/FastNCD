@@ -23,7 +23,7 @@ int main() {
 	cout << "string y is: " << y << endl << endl;
 
 	// Snappy with default compression settings used as Z
-	cout << "snappy compression: " << ncd.calculate_ncd(x, y, z_snappy_ds)
+	cout << "snappy with default compression settings: " << ncd.calculate_ncd(x, y, z_snappy_ds)
 			<< endl;
 
 	// GZip with best compression (level 9 compression) used as Z
