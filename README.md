@@ -1,6 +1,6 @@
 # FastNCD
 
-`FastNCD` is a C++ library for calculating the [Normalized Compression Distance](https://en.wikipedia.org/wiki/Normalized_compression_distance)(NCD) between two strings.
+`FastNCD` is a very simple C++ library for calculating the [Normalized Compression Distance](https://en.wikipedia.org/wiki/Normalized_compression_distance)(NCD) between two strings.
 
 ### Currently supported real-world compression methods
 
