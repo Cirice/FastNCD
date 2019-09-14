@@ -103,5 +103,8 @@ The code is developed and tested mainly using `Boost 1.67.0` on `Debian Buster` 
 ### Todo (that I can think of)
 
 - [ ] Improving the tests
-- [ ] Adding support for `Zstd`, `LZMA`, and `Brotli`
+- [ ] Adding support for more real world compressors
+	- [ ] `Zstd`
+	- [ ] `LZMA`
+	- [ ] `Brotli`
 - [ ] Improving the interface to use (most compressors can accesapt many different settings that make them distinct)
