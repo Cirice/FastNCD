@@ -1,6 +1,6 @@
 # FastNCD
 
-`FastNCD` is a very simple C++ library for calculating the [Normalized Compression Distance](https://en.wikipedia.org/wiki/Normalized_compression_distance)(NCD) between two strings.
+`FastNCD` is an elementary C++ library for calculating the [Normalized Compression Distance](https://en.wikipedia.org/wiki/Normalized_compression_distance)(NCD) between two strings.
 
 ### Currently supported real-world compression methods
 
@@ -15,13 +15,13 @@
 
 ### How to use?
 
-You just need to include `ncd.hpp` in your source code and compile `ncd.cpp` with your code. Also don't forget to link your code with `libsnappy` and `libboost iostreams` while building your project =)
+You need to include `ncd.hpp` in your source code and compile `ncd.cpp` with your code. Also, don't forget to link your code with `libsnappy` and `libboost iostreams` while building your project =)
 
 You could use the `Makefile` to build the example files in `src` folder:
 
     make all
 
-If make is failing there is a big chance that something is wrong with the dependencies.
+If make is failing, there is a big chance that something is wrong with the dependencies.
 
 Building and running the tests:
 
@@ -42,12 +42,12 @@ using namespace std;
 
 int main() {
 
-    // Two identical long (over 500 character long) strings from The American Crisis by Thomas Paine
+    // Two identical long (over 500 characters long) strings from The American Crisis by Thomas Paine
     string x =
-            "THESE are the times that try men's souls. The summer soldier and the sunshine patriot will, in this crisis, shrink from the service of their country; but he that stands by it now, deserves the love and thanks of man and woman. Tyranny, like hell, is not easily conquered; yet we have this consolation with us, that the harder the conflict, the more glorious the triumph. What we obtain too cheap, we esteem too lightly: it is dearness only that gives everything its value. Heaven knows how to put a proper price upon its goods; and it would be strange indeed if so celestial an article as FREEDOM should not be highly rated";
+            "THESE are the times that try men's souls. The summer soldier and the sunshine patriot will, in this crisis, shrink from the service of their country; but he that stands by it now deserves the love and thanks of man and woman. Tyranny, like hell, is not easily conquered; yet we have this consolation with us, that the harder the conflict, the more glorious the triumph. What we obtain too cheap, we esteem too lightly: it is dearness only that gives everything its value. Heaven knows how to put a proper price upon its goods, and it would be strange indeed if so celestial an article as FREEDOM should not be highly rated";
 
     string y =
-            "THESE are the times that try men's souls. The summer soldier and the sunshine patriot will, in this crisis, shrink from the service of their country; but he that stands by it now, deserves the love and thanks of man and woman. Tyranny, like hell, is not easily conquered; yet we have this consolation with us, that the harder the conflict, the more glorious the triumph. What we obtain too cheap, we esteem too lightly: it is dearness only that gives everything its value. Heaven knows how to put a proper price upon its goods; and it would be strange indeed if so celestial an article as FREEDOM should not be highly rated";
+            "THESE are the times that try men's souls. The summer soldier and the sunshine patriot will, in this crisis, shrink from the service of their country; but he that stands by it now deserves the love and thanks of man and woman. Tyranny, like hell, is not easily conquered; yet we have this consolation with us, that the harder the conflict, the more glorious the triumph. What we obtain too cheap, we esteem too lightly: it is dearness only that gives everything its value. Heaven knows how to put a proper price upon its goods, and it would be strange indeed if so celestial an article as FREEDOM should not be highly rated";
 
     // Of course we first need to create an instance for our NCD class ;)
     NCD ncd = NCD();
@@ -98,12 +98,12 @@ Usually on a `Debian` based operating system like `Mint` or `Ubuntu`, and of cou
     sudo apt-get install libboost-iostreams-dev libsnappy-dev
 
 ### Important thing to remember
-The code is developed and tested mainly using `Boost 1.67.0` on `Debian Buster` using `GCC 8.3` but I guess it should work on the other operating systems that are derivatives of Debian 10 code-base (or newer) too without any modifications.
+The code is developed and tested mainly using `Boost 1.67.0` on `Debian Buster` using `GCC 8.3`, but I guess it should work on the other operating systems that are derivatives of Debian 10 code-base (or newer) too without any modifications.
 
 ### Todo (that I can think of)
 
 - [ ] Improving the tests
-- [ ] Adding support for more real world compressors
+- [ ] Adding support for more real-world compressors
     - [ ] `Zstd`
     - [ ] `LZMA`
     - [ ] `Brotli`
