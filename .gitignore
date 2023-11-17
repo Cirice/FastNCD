@@ -47,3 +47,14 @@ test.exe
 test
 tests.exe
 tests
+
+# Ignore the IDE files
+.idea/*
+
+# Ignore the cmake files
+CMakeFiles/*
+CMakeCache.txt
+cmake_install.cmake
+cmake-build-debug/*
+
+

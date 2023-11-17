@@ -1,6 +1,6 @@
 # FastNCD
 
-`FastNCD` is an elementary C++ library for calculating the [Normalized Compression Distance](https://en.wikipedia.org/wiki/Normalized_compression_distance)(NCD) between two strings.
+`FastNCD` is a C++ library for calculating the [Normalized Compression Distance](https://en.wikipedia.org/wiki/Normalized_compression_distance) (NCD) between two strings.
 
 ### Currently supported real-world compression methods
 
@@ -15,7 +15,7 @@
 
 ### How to use?
 
-You need to include `ncd.hpp` in your source code and compile `ncd.cpp` with your code. Also, don't forget to link your code with `libsnappy` and `libboost iostreams` while building your project =)
+You need to include `ncd.hpp` in your source code and compile `ncd.cpp` with your code. Also, don't forget to link your code with `libsnappy` and `libboost iostreams` while building your project.
 
 You could use the `Makefile` to build the example files in `src` folder:
 
@@ -100,7 +100,7 @@ Usually on a `Debian` based operating system like `Mint` or `Ubuntu`, and of cou
 ### Important thing to remember
 The code is developed and tested mainly using `Boost 1.67.0` on `Debian Buster` using `GCC 8.3`, but I guess it should work on the other operating systems that are derivatives of Debian 10 code-base (or newer) too without any modifications.
 
-### Todo (that I can think of)
+### Todo
 
 - [ ] Improving the tests
 - [ ] Adding support for more real-world compressors
