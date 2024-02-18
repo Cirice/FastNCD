@@ -1,21 +1,24 @@
-# FastNCD
+# FastNCD: A C++ Library for Computing Normalized Compression Distance
 
-`FastNCD` is a C++ library for calculating the [Normalized Compression Distance](https://en.wikipedia.org/wiki/Normalized_compression_distance) (NCD) between two strings.
+`FastNCD` is a C++ library designed to compute the [Normalized Compression Distance (NCD)](https://en.wikipedia.org/wiki/Normalized_compression_distance) between two strings, leveraging various compression algorithms to measure similarity.
 
-### Currently supported real-world compression methods
+## Supported Compression Methods
 
-| Compressor | Main compression algorithm | Compression level | compression flag |
-|--------|--------|--------|--------|
-|    [Gzip](https://en.wikipedia.org/wiki/Gzip)    |  [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE)      |  9 (best compression)     |  z_gzip_bc      |
-|    [Zlib](https://en.wikipedia.org/wiki/Zlib) |  [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE)      |  9 (best compression)      |  z_zlib_bc      |
-|    [Zlib](https://en.wikipedia.org/wiki/Zlib) | [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE)      |  1 (fastest compression)      |  z_zlib_fc      |
-|    [Snappy](https://en.wikipedia.org/wiki/Snappy_(compression))    |  [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78)      |  default      |  z_snappy_ds      |
-|    [Bzip2](https://en.wikipedia.org/wiki/Bzip2)    |  [Burrows–Wheeler transform](https://en.wikipedia.org/wiki/Burrows–Wheeler_transform)      |  default      |  z_bzip2_ds      |
+The library currently supports a range of compressors with their primary algorithms and compression levels:
+
+| Compressor | Main Algorithm | Compression Level | Flag |
+|------------|----------------|-------------------|------|
+| [Gzip](https://en.wikipedia.org/wiki/Gzip) | [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE) | 9 (best) | `z_gzip_bc` |
+| [Zlib](https://en.wikipedia.org/wiki/Zlib) | DEFLATE | 9 (best) | `z_zlib_bc` |
+| [Zlib](https://en.wikipedia.org/wiki/Zlib) | DEFLATE | 1 (fastest) | `z_zlib_fc` |
+| [Snappy](https://en.wikipedia.org/wiki/Snappy_(compression)) | [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78) | Default | `z_snappy_ds` |
+| [Bzip2](https://en.wikipedia.org/wiki/Bzip2) | [Burrows–Wheeler Transform](https://en.wikipedia.org/wiki/Burrows–Wheeler_transform) | Default | `z_bzip2_ds` |
 
 
-### How to use?
+## How to Use the Library
 
-You need to include `ncd.hpp` in your source code and compile `ncd.cpp` with your code. Also, don't forget to link your code with `libsnappy` and `libboost iostreams` while building your project.
+You need to include `ncd.hpp` in your source code and compile `ncd.cpp` with your code. Also, don't forget to link your
+code with `libsnappy` and `libboost iostreams` while building your project.
 
 You could use the `Makefile` to build the example files in `src` folder:
 
@@ -29,9 +32,7 @@ Building and running the tests:
 
 Example code for calculating the NCD between two identical C++ strings by using different real world compressors:
 
-
 ```cpp
-
 #include "ncd.hpp"
 
 #include <iostream>
@@ -78,34 +79,34 @@ int main() {
 
     return 0;
 }
-
-
 ```
 
-
-
-### Dependencies
+## Dependencies
 
 Don't forget to install the following libraries (headers and library files):
 
     - Boost iostreams library (version 1.67.0 or newer)
     - Google's Snappy compression library
-    - zlib
-    - libbz2
+    - Zlib
+    - BZip2
+    - Catch2 (for testing)
+    - CMake
 
-Usually on a `Debian` based operating system like `Mint` or `Ubuntu`, and of course `Debian` itself you could install these dependencies by executing the following command in your shell environment:
+Usually on a `Debian` based operating system like `Mint` or `Ubuntu`, and of course `Debian` itself you could install
+these dependencies by executing the following command in your shell environment:
 
-    sudo apt-get install libboost-iostreams-dev libsnappy-dev
+    sudo apt-get install libboost-iostreams-dev libsnappy-dev zlib1g-dev libbz2-dev catch2 CMake
 
-### Important thing to remember
-The code is developed and tested mainly using `Boost 1.67.0` on `Debian Buster` using `GCC 8.3`, but I guess it should work on the other operating systems that are derivatives of Debian 10 code-base (or newer) too without any modifications.
+## Important Notes
 
-### Todo
+The code is developed and tested mainly using `Boost 1.67.0` on `Debian Buster` using `GCC 8.3`, but I guess it should
+work on the other operating systems that are derivatives of Debian 10 code-base (or newer) too without any
+modifications.
 
-- [ ] Improving the tests
-- [ ] Adding support for more real-world compressors
+## TODO
+
+- [ ] Adding support for more compression methods, like:
     - [ ] `Zstd`
     - [ ] `LZMA`
     - [ ] `Brotli`
     - [ ] `LZ4`
-- [ ] Improving the interface to use (most compressors can accept many different settings that make them distinct)
