@@ -1,3 +1,0 @@
-/home/hassan/CLionProjects/newFastNCD/cmake-build-debug/CMakeFiles/newFastNCD.dir
-/home/hassan/CLionProjects/newFastNCD/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/hassan/CLionProjects/newFastNCD/cmake-build-debug/CMakeFiles/rebuild_cache.dir
