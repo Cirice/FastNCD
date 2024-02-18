@@ -1,0 +1,41 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+trim_trailing_whitespace = true
+
+# Python specific settings, adhering to PEP 8
+[*.py]
+indent_size = 4
+max_line_length = 79
+
+# YAML files, often used for configuration
+[*.yml]
+indent_size = 2
+
+# Markdown files have unique whitespace handling
+[*.md]
+trim_trailing_whitespace = false
+
+# Bash script specific settings
+[*.sh]
+indent_size = 4
+
+# SQL files
+[*.sql]
+indent_size = 2
+
+# C/C++ files
+[{*.c,*.cpp,*.h,*.hpp}]
+indent_size = 4
+indent_style = space
+max_line_length = 80
+trim_trailing_whitespace = true
+

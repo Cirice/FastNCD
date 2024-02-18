@@ -33,10 +33,10 @@
 
 # Ignore the build and lib dirs
 build
-lib/*
+lib/
 
 # Ignore any executables
-bin/*
+bin/
 
 # Ignore the executables files
 main.exe
@@ -48,13 +48,13 @@ test
 tests.exe
 tests
 
-# Ignore the IDE files
-.idea/*
-
 # Ignore the cmake files
-CMakeFiles/*
+CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
-cmake-build-debug/*
+cmake-build-debug/
 
+# Ignore the IDE files
+.vscode/
+.idea/
 
