@@ -20,9 +20,9 @@ FastNCD currently supports the following compression methods:
 
 Use the following command to create a shared library:
 
-    ```shell
-    make all
-    ```
+```shell
+make all
+```
 
 Then, you can use the library in your project by including the header file `fast_ncd.h` in your source code and linking
 your code with the shared library (`libnewFastNCD` file). Also, don't forget to link your
@@ -30,9 +30,9 @@ code with `libsnappy` and `libboost iostreams` while building your project.
 
 To run the tests, use the following command:
 
-    ```shell
-    make scripts/run_tests.sh
-    ```
+```shell
+bash scripts/run_tests.sh
+```
 
 ## Example Usage
 
@@ -92,12 +92,19 @@ int main() {
 If you are using a Debian-based operating system, you can install the required dependencies by using the following
 command:
 
-    ```shell
-       sudo apt-get install libboost-iostreams-dev libsnappy-dev zlib1g-dev libbz2-dev
-    ```
+```shell
+sudo apt-get install libboost-iostreams-dev libsnappy-dev zlib1g-dev libbz2-dev
+```
+
+The main dependencies of the project are:
+
+- [Boost.Iostreams](https://www.boost.org/)
+- [Snappy Compression Library](https://github.com/google/snappy)
+- [Zlib Compression Library](https://zlib.net/)
+- [Bzip2 Compression Library](https://sourceware.org/bzip2/)
+- [Gzip Compression Library](https://www.gzip.org/)
+- [Zlib Compression Library](https://zlib.net/)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
