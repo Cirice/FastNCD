@@ -1,9 +1,8 @@
+// Testing file for the fast_ncd.cpp file
 #include "fast_ncd.h"
 
 // Using Catch2 for unit testing
-#include <catch2/catch.hpp>
-
-#include <iostream>
+#include "catch2/catch_amalgamated.hpp"
 
 
 // Test cases for the NCD.compress method

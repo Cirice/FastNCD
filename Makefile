@@ -2,7 +2,7 @@
 CXX = g++
 
 # Specify the build flags
-CXXFLAGS = -Wall -Wextra -std=c++17 -Iextern
+CXXFLAGS = -Wall -Wextra -std=c++17
 
 # Specify the source files
 SRCS = fast_ncd.cpp
@@ -26,6 +26,9 @@ TEST_OUT = test_program
 # Specify the libraries to link against
 LIBS = -lboost_iostreams -lboost_system -lboost_filesystem -lsnappy -pthread
 
+# Catch2 files
+CATCH_CPP = catch2/catch_amalgamated.cpp
+
 # Default target
 all: $(OUT)
 
@@ -42,7 +45,7 @@ test: $(TEST_OUT)
 
 # Build the test binary
 $(TEST_OUT): $(TEST_OBJS) $(OUT)
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS) $(CATCH_CPP)
 
 # Clean target
 clean:
