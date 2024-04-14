@@ -1,39 +1,45 @@
 # FastNCD
 
-FastNCD is a simple C++ library to compute the [Normalized Compression Distance (NCD)](https://en.wikipedia.org/wiki/Normalized_compression_distance) between two strings.
+FastNCD is a simple C++ library to compute
+the [Normalized Compression Distance (NCD)](https://en.wikipedia.org/wiki/Normalized_compression_distance) between two
+strings.
 
 ## Supported Compression Methods
 
 FastNCD currently supports the following compression methods:
 
-| Compressor | Main Algorithm | Compression Level | Flag |
-|------------|----------------|-------------------|------|
-| [Gzip](https://en.wikipedia.org/wiki/Gzip) | [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE) | 9 (best) | `z_gzip_bc` |
-| [Zlib](https://en.wikipedia.org/wiki/Zlib) | DEFLATE | 9 (best) | `z_zlib_bc` |
-| [Zlib](https://en.wikipedia.org/wiki/Zlib) | DEFLATE | 1 (fastest) | `z_zlib_fc` |
-| [Snappy](https://en.wikipedia.org/wiki/Snappy_(compression)) | [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78) | Default | `z_snappy_ds` |
-| [Bzip2](https://en.wikipedia.org/wiki/Bzip2) | [Burrows–Wheeler Transform](https://en.wikipedia.org/wiki/Burrows–Wheeler_transform) | Default | `z_bzip2_ds` |
-
+| Compressor                                                   | Main Algorithm                                                                       | Compression Level | Flag          |
+|--------------------------------------------------------------|--------------------------------------------------------------------------------------|-------------------|---------------|
+| [Gzip](https://en.wikipedia.org/wiki/Gzip)                   | [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE)                                     | 9 (best)          | `z_gzip_bc`   |
+| [Zlib](https://en.wikipedia.org/wiki/Zlib)                   | DEFLATE                                                                              | 9 (best)          | `z_zlib_bc`   |
+| [Zlib](https://en.wikipedia.org/wiki/Zlib)                   | DEFLATE                                                                              | 1 (fastest)       | `z_zlib_fc`   |
+| [Snappy](https://en.wikipedia.org/wiki/Snappy_(compression)) | [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78)                                  | Default           | `z_snappy_ds` |
+| [Bzip2](https://en.wikipedia.org/wiki/Bzip2)                 | [Burrows–Wheeler Transform](https://en.wikipedia.org/wiki/Burrows–Wheeler_transform) | Default           | `z_bzip2_ds`  |
 
 ## How to Use It
 
-You need to include [fast_ncd.h](fast_ncd.h) in your source code and compile `ncd.cpp` with your code. Also, don't forget to link your
+Use the following command to create a shared library:
+
+    ```shell
+    make all
+    ```
+
+Then, you can use the library in your project by including the header file `fast_ncd.h` in your source code and linking
+your code with the shared library (`libnewFastNCD` file). Also, don't forget to link your
 code with `libsnappy` and `libboost iostreams` while building your project.
 
-You could use the `Makefile` to build the example files in `src` folder:
+To run the tests, use the following command:
 
-    make all
+    ```shell
+    make scripts/run_tests.sh
+    ```
 
-If make is failing, there is a big chance that something is wrong with the dependencies.
+## Example Usage
 
-Building and running the tests:
-
-    make test
-
-Example code for calculating the NCD between two identical C++ strings by using different real world compressors:
+Example code for calculating the NCD between two identical C++ strings by using different compressors:
 
 ```cpp
-#include "ncd.hpp"
+#include "fast_ncd.h"
 
 #include <iostream>
 #include <string>
@@ -50,7 +56,7 @@ int main() {
     string y =
             "THESE are the times that try men's souls. The summer soldier and the sunshine patriot will, in this crisis, shrink from the service of their country; but he that stands by it now deserves the love and thanks of man and woman. Tyranny, like hell, is not easily conquered; yet we have this consolation with us, that the harder the conflict, the more glorious the triumph. What we obtain too cheap, we esteem too lightly: it is dearness only that gives everything its value. Heaven knows how to put a proper price upon its goods, and it would be strange indeed if so celestial an article as FREEDOM should not be highly rated";
 
-    // Of course we first need to create an instance for our NCD class ;)
+    // Of course, we first need to create an instance for our NCD class ;)
     NCD ncd = NCD();
 
     cout << "string x is: " << x << endl << endl;
@@ -83,30 +89,15 @@ int main() {
 
 ## Dependencies
 
-Don't forget to install the following libraries (headers and library files):
+If you are using a Debian-based operating system, you can install the required dependencies by using the following
+command:
 
-    - Boost iostreams library (version 1.67.0 or newer)
-    - Google's Snappy compression library
-    - Zlib
-    - BZip2
-    - Catch2 (for testing)
-    - CMake
+    ```shell
+       sudo apt-get install libboost-iostreams-dev libsnappy-dev zlib1g-dev libbz2-dev
+    ```
 
-Usually on a `Debian` based operating system like `Mint` or `Ubuntu`, and of course `Debian` itself you could install
-these dependencies by executing the following command in your shell environment:
+## License
 
-    sudo apt-get install libboost-iostreams-dev libsnappy-dev zlib1g-dev libbz2-dev catch2 CMake
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Important Notes
-
-The code is developed and tested mainly using `Boost 1.67.0` on `Debian Buster` using `GCC 8.3`, but I guess it should
-work on the other operating systems that are derivatives of Debian 10 code-base (or newer) too without any
-modifications.
-
-## TODO
-
-- [ ] Adding support for more compression methods, like:
-    - [ ] `Zstd`
-    - [ ] `LZMA`
-    - [ ] `Brotli`
-    - [ ] `LZ4`
+```

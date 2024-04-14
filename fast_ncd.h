@@ -8,13 +8,11 @@
 using namespace std;
 
 // a flag for each different type of compressors
-enum cmp_type
-{
+enum cmp_type {
     z_snappy_ds, z_gzip_bc, z_zlib_bc, z_zlib_fc, z_bzip2_ds
 };
 
-class NCD
-{
+class NCD {
 public:
     // given an arbitary sized byte array this method will compress it with compression algorithm t
     int compress(string x, cmp_type t);
