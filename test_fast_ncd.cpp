@@ -1,9 +1,12 @@
 #include "fast_ncd.h"
 
+// Using Catch2 for unit testing
 #include <catch2/catch.hpp>
+
 #include <iostream>
 
 
+// Test cases for the NCD.compress method
 TEST_CASE("Testing compression flags", "[NCD.compress]")
 {
     NCD ncd_instance = NCD();

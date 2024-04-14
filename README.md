@@ -1,10 +1,10 @@
-# FastNCD: A C++ Library for Computing Normalized Compression Distance
+# FastNCD
 
-`FastNCD` is a C++ library designed to compute the [Normalized Compression Distance (NCD)](https://en.wikipedia.org/wiki/Normalized_compression_distance) between two strings, leveraging various compression algorithms to measure similarity.
+FastNCD is a simple C++ library to compute the [Normalized Compression Distance (NCD)](https://en.wikipedia.org/wiki/Normalized_compression_distance) between two strings.
 
 ## Supported Compression Methods
 
-The library currently supports a range of compressors with their primary algorithms and compression levels:
+FastNCD currently supports the following compression methods:
 
 | Compressor | Main Algorithm | Compression Level | Flag |
 |------------|----------------|-------------------|------|
@@ -15,9 +15,9 @@ The library currently supports a range of compressors with their primary algorit
 | [Bzip2](https://en.wikipedia.org/wiki/Bzip2) | [Burrows–Wheeler Transform](https://en.wikipedia.org/wiki/Burrows–Wheeler_transform) | Default | `z_bzip2_ds` |
 
 
-## How to Use the Library
+## How to Use It
 
-You need to include `ncd.hpp` in your source code and compile `ncd.cpp` with your code. Also, don't forget to link your
+You need to include [fast_ncd.h](fast_ncd.h) in your source code and compile `ncd.cpp` with your code. Also, don't forget to link your
 code with `libsnappy` and `libboost iostreams` while building your project.
 
 You could use the `Makefile` to build the example files in `src` folder:
