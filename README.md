@@ -105,6 +105,8 @@ The main dependencies of the project are:
 - [Gzip Compression Library](https://www.gzip.org/)
 - [Zlib Compression Library](https://zlib.net/)
 
+Other dependencies like `g++`, `GNU Make`, and `Bash` are required to build the project and run the tests.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
