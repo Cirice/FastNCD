@@ -24,7 +24,7 @@ OUT = libnewFastNCD.so
 TEST_OUT = test_program
 
 # Specify the libraries to link against
-LIBS = -lboost_iostreams -lboost_system -lboost_filesystem -lsnappy -pthread
+LIBS = -lboost_iostreams -lsnappy
 
 # Catch2 files
 CATCH_CPP = catch2/catch_amalgamated.cpp

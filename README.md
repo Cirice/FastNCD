@@ -25,8 +25,8 @@ make all
 ```
 
 Then, you can use the library in your project by including the header file `fast_ncd.h` in your source code and linking
-your code with the shared library (`libnewFastNCD` file). Also, don't forget to link your
-code with `libsnappy` and `libboost iostreams` while building your project.
+your code with the shared library (`libnewFastNCD.so` file). Also, don't forget to link your
+code with `libsnappy` and `libboost_iostreams` while building your project.
 
 To run the tests, use the following command:
 
